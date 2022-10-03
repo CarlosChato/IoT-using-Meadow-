@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "AtktnwP3BNeXiPBCGWrCOeV/hNAYsAowlvjwqe7btVUyRAQ3a5E31Zlurqa3w2JfdDZNAWZrVL4c9WWd30Zbnw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\javie\\Source\\Repos\\MDV\\MeadowTW1\\MeadowTW1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\javie\\.nuget\\packages\\meadow\\0.31.1\\meadow.0.31.1.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.contracts\\0.31.1\\meadow.contracts.0.31.1.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.f7\\0.31.1\\meadow.f7.0.31.1.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.foundation\\0.33.1\\meadow.foundation.0.33.1.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.foundation.displays.micrographics\\0.9.54\\meadow.foundation.displays.micrographics.0.9.54.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.foundation.displays.tftspi\\0.7.58\\meadow.foundation.displays.tftspi.0.7.58.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.foundation.sensors.location.gnss.nmeaprocessor\\0.1.47\\meadow.foundation.sensors.location.gnss.nmeaprocessor.0.1.47.nupkg.sha512",
+    "C:\\Users\\javie\\.nuget\\packages\\meadow.units\\0.31.1\\meadow.units.0.31.1.nupkg.sha512"
+  ],
+  "logs": []
+}
