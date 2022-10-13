@@ -2,13 +2,9 @@
     internal class Secrets {
 
         //WiFi NAME 
-        public const string WIFI_NAME = "KCS_CORPORATE";
-        //public const string WIFI_NAME = "MiFibra-BFBA";
-        //public const string WIFI_NAME = "KCS_GUEST";
+        public const string WIFI_NAME = "vodafoneF530";
 
         //PASSWORD FOR THE WiFi NAME
-        public const string WIFI_PASSWORD = "E7289DHTYdwegeyswe";
-        //public const string WIFI_PASSWORD = "V2mqUyEg";
-        //public const string WIFI_PASSWORD = "KCS82hsdyedise";
+        public const string WIFI_PASSWORD = "JJY4YWN2YGZ3MT";
     }
 }

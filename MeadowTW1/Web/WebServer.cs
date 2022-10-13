@@ -143,16 +143,16 @@ namespace MeadowTW1.Web {
                                         Data.round_time = new string[] { round_time_parts[1] };
 
                                         if (!tempCheck(Data.temp_max, false) || !tempCheck(Data.temp_min, true)) {
-                                            message = "El rango de temperatura m&aacute;ximo es entre 30 y 12 grados C.";
+                                            message = "El rango de temperatura maximo es entre 30 y 12 grados C.";
                                         }
 
                                         else {
-                                            message = "Los par&aacute;metros se han cambiado satisfactoriamente. Todo preparado.";
+                                            message = "Los parametros se han cambiado satisfactoriamente. Todo preparado.";
                                             ready = true;
                                         }
                                     }
                                     else {
-                                        message = "La contrase&ntilde;a es incorrecta.";
+                                        message = "La contrasenia es incorrecta.";
                                     }
                                 }
                             }

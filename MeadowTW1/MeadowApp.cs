@@ -63,7 +63,7 @@ namespace MeadowTW1 {
                     webServer.Start();
                 }
             }
-
+            Console.WriteLine("llega aqui");
             //Temperature Sensor Configuration
             sensor = new AnalogTemperature(device: Device, analogPin: Device.Pins.A01, sensorType: AnalogTemperature.KnownSensorType.LM35);
             sensor.TemperatureUpdated += AnalogTemperatureUpdated;
@@ -194,6 +194,7 @@ namespace MeadowTW1 {
         //Temperature and Display Updated
         void AnalogTemperatureUpdated(object sender, IChangeResult<Meadow.Units.Temperature> e) {
             //Update Display with new temperature
+            Console.WriteLine("temperatura"+e.New.Celsius);
             graphics.DrawRectangle(
                 x: 48, y: 160,
                 width: 144,
