@@ -10,10 +10,10 @@ namespace MeadowTW1 {
 
         //ROUND VARIABLES
         public static string[] temp_max = { "18" }; // In ºC
-        public static String[] temp_min = { "16" }; // In ºC
+        public static string[] temp_min = { "16" }; // In ºC
         public static int display_refresh = 100; // In ms
         public static int refresh = 100; // In ms
-        public static String[] round_time = { "60" }; // in s
+        public static string[] round_time = { "60" }; // in s
 
         //START ROUND VARIABLES
         public static bool is_working = false;

@@ -124,7 +124,12 @@ namespace MeadowTW1.Web {
 
                                         // Param 0 => Temp max
                                         string[] temp_max_parts = parameters[0].Split('=');
+                                        //crea un array de strings "temp_max_parts" y coge el parametro 0 desde la url.
+                                        //Coge el valor desde el = y lo utiliza como separador. Se guarda el valor en el segundo elemento
+                                        //de la cadena ya que el primero es un espacio 
                                         Data.temp_max = new string[] { temp_max_parts[1] };
+                                        //crea el array de temp maxima con el valor de temp_max_parts en la posicion 1, es decir, 
+                                        //el valor recibido en el formulario en el parametro 0.
 
                                         // Param 1 => Temp min
                                         string[] temp_min_parts = parameters[1].Split('=');

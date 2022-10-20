@@ -65,7 +65,7 @@ namespace MeadowTW1 {
             }
             Console.WriteLine("llega aqui");
             //Temperature Sensor Configuration
-            sensor = new AnalogTemperature(device: Device, analogPin: Device.Pins.A01, sensorType: AnalogTemperature.KnownSensorType.LM35);
+            sensor = new AnalogTemperature(device: Device, analogPin: Device.Pins.A01, sensorType: AnalogTemperature.KnownSensorType.TMP36);
             sensor.TemperatureUpdated += AnalogTemperatureUpdated;
 
             //Display Configuration
