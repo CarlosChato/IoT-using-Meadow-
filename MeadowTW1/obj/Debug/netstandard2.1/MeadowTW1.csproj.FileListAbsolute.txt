@@ -19,6 +19,10 @@ C:\Users\javie\Desktop\Último curso\Metodología de Desarrollo Visual\MeadowTW1
 C:\Users\javie\Desktop\Último curso\Metodología de Desarrollo Visual\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.csproj.CopyComplete
 C:\Users\javie\Desktop\Último curso\Metodología de Desarrollo Visual\MeadowTW1\obj\Debug\netstandard2.1\App.dll
 C:\Users\javie\Desktop\Último curso\Metodología de Desarrollo Visual\MeadowTW1\obj\Debug\netstandard2.1\App.pdb
+C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.AssemblyInfoInputs.cache
+C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.AssemblyInfo.cs
+C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.csproj.CoreCompileInputs.cache
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\App.deps.json
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\App.dll
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\App.pdb
@@ -32,11 +36,7 @@ C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\NmeaProcessor
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\Meadow.Units.dll
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\NETDuinoWar.dll
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\bin\Debug\netstandard2.1\NETDuinoWar.pdb
-C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.csproj.AssemblyReference.cache
-C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.AssemblyInfoInputs.cache
-C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.AssemblyInfo.cs
-C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.csproj.CoreCompileInputs.cache
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.csproj.CopyComplete
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\App.dll
 C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\App.pdb
+C:\Users\javie\Source\Repos\MDV\MeadowTW1\obj\Debug\netstandard2.1\MeadowTW1.csproj.AssemblyReference.cache

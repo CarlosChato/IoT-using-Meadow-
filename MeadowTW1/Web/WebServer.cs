@@ -147,8 +147,9 @@ namespace MeadowTW1.Web {
                                         string[] round_time_parts = parameters[4].Split('=');
                                         Data.round_time = new string[] { round_time_parts[1] };
 
-                                        if (!tempCheck(Data.temp_max, false) || !tempCheck(Data.temp_min, true)) {
-                                            message = "El rango de temperatura maximo es entre 30 y 12 grados C.";
+                                        if (!tempConsistantCheck(Data.temp_max,Data.temp_min)) {
+                                            message = "El rango de temperatura maximo es entre 30 y 12 grados C. Ademas, " +
+                                            "el valor debe ser numerico y tener coherencia. Revisa los parametros de temperatura";
                                         }
 
                                         else {
@@ -198,7 +199,7 @@ namespace MeadowTW1.Web {
             string datos = string.Empty;
             if (data != null) {
                 for (int i = 0; i < data.Length; i++) {
-                    datos = datos + data[i] + ";";
+                    datos = datos + data[i];
                 }
 
                 return datos;
@@ -209,22 +210,59 @@ namespace MeadowTW1.Web {
         }
 
         public static bool tempCheck(string[] data, bool tipo) {
+            bool result;
+            double aux= 0;
             if (data != null) {
                 for (int i = 0; i < data.Length; i++) {
-                    if (tipo) {
-                        if (Double.Parse(data[i].ToString()) < 12) {
-                            return false;
+                    result = double.TryParse(data[i],out aux);
+                    if (result ==true) 
+                    {
+                        if (tipo)
+                        {
+                            if (Double.Parse(data[i].ToString()) < 12 ||  Double.Parse(data[i].ToString()) >30)
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            if (Double.Parse(data[i].ToString()) > 30 || Double.Parse(data[i].ToString()) <12)
+                            {
+                                return false;
+                            }
                         }
                     }
-                    else {
-                        if (Double.Parse(data[i].ToString()) > 30) {
-                            return false;
-                        }
+                    else 
+                    {
+                        return false;
                     }
+                    
                 }
                 return true;
             }
             return true;
+        }
+
+        public static bool tempConsistantCheck(string[] data1, string[] data2) {
+            if (data1 != null && data1 != null)
+            {
+                if (tempCheck(data1, false) && tempCheck(data2, true))
+                {
+                    for (int i = 0; i < data1.Length; i++)
+                    {
+                        if (Double.Parse(data1[i].ToString()) >= Double.Parse(data2[i].ToString())) 
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return false;
+            }
+            return false;
         }
 
         public static string writeHTML(string message) {
