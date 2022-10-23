@@ -147,15 +147,25 @@ namespace MeadowTW1.Web {
                                         string[] round_time_parts = parameters[4].Split('=');
                                         Data.round_time = new string[] { round_time_parts[1] };
 
-                                        if (!tempConsistantCheck(Data.temp_max,Data.temp_min)) {
-                                            message = "El rango de temperatura maximo es entre 30 y 12 grados C. Ademas, " +
-                                            "el valor debe ser numerico y tener coherencia. Revisa los parametros de temperatura";
-                                        }
+                                        if (timeCheck(Data.round_time)) 
+                                        {
+                                            if (!tempConsistantCheck(Data.temp_max, Data.temp_min))
+                                            {
+                                                message = "El rango de temperatura maximo es entre 30 y 12 grados C. Ademas, " +
+                                                "el valor debe ser numerico y tener coherencia. Revisa los parametros de temperatura";
+                                            }
 
-                                        else {
-                                            message = "Los parametros se han cambiado satisfactoriamente. Todo preparado.";
-                                            ready = true;
+                                            else
+                                            {
+                                                message = "Los parametros se han cambiado satisfactoriamente. Todo preparado.";
+                                                ready = true;
+                                            }
                                         }
+                                        else
+                                        {
+                                            message = "El tiempo no es correcto";
+                                        }
+                                        
                                     }
                                     else {
                                         message = "La contrasenia es incorrecta.";
@@ -207,6 +217,37 @@ namespace MeadowTW1.Web {
             else {
                 return "";
             }
+        }
+
+        public static bool timeCheck(string[] data)
+        {
+            bool result;
+            int aux = 0;
+            if (data != null)
+            {
+                for (int i = 0; i < data.Length; i++)
+                {
+                    result = int.TryParse(data[i], out aux);
+                    if (result == true)
+                    {
+                        if (int.Parse(data[i].ToString()) >0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+                return false;
+            }
+            return false;
         }
 
         public static bool tempCheck(string[] data, bool tipo) {
