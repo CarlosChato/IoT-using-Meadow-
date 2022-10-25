@@ -137,35 +137,44 @@ namespace MeadowTW1.Web {
 
                                         // Param 2 => to display_refresh
                                         string[] display_refresh_parts = parameters[2].Split('=');
-                                        Data.display_refresh = Int16.Parse(display_refresh_parts[1]);
+                                        
 
                                         // Param 3 => to refresh
                                         string[] refresh_parts = parameters[3].Split('=');
-                                        Data.refresh = Int16.Parse(refresh_parts[1]);
+
 
                                         // Param 4 => to round_time
                                         string[] round_time_parts = parameters[4].Split('=');
                                         Data.round_time = new string[] { round_time_parts[1] };
 
-                                        if (timeCheck(Data.round_time)) 
+                                        if(timeRefreshCheck(display_refresh_parts[1]) && timeRefreshCheck(refresh_parts[1])) 
                                         {
-                                            if (!tempConsistantCheck(Data.temp_max, Data.temp_min))
-                                            {
-                                                message = "El rango de temperatura maximo es entre 30 y 12 grados C. Ademas, " +
-                                                "el valor debe ser numerico y tener coherencia. Revisa los parametros de temperatura";
-                                            }
+                                            Data.refresh = Int16.Parse(refresh_parts[1]);
+                                            Data.display_refresh = Int16.Parse(display_refresh_parts[1]);
 
+                                            if (timeCheck(Data.round_time)) 
+                                            {
+                                                if (!tempConsistantCheck(Data.temp_max, Data.temp_min))
+                                                {
+                                                    message = "El rango de temperatura maximo es entre 30 y 12 grados C. Ademas, " +
+                                                    "el valor debe ser numerico y tener coherencia. Revisa los parametros de temperatura";
+                                                }
+
+                                                else
+                                                {
+                                                    message = "Los parametros se han cambiado satisfactoriamente. Todo preparado.";
+                                                    ready = true;
+                                                }
+                                            }
                                             else
                                             {
-                                                message = "Los parametros se han cambiado satisfactoriamente. Todo preparado.";
-                                                ready = true;
+                                                message = "El tiempo no es correcto";
                                             }
                                         }
-                                        else
+                                        else 
                                         {
-                                            message = "El tiempo no es correcto";
+                                            message = "Los tiempos de refresco son incorrectos";
                                         }
-                                        
                                     }
                                     else {
                                         message = "La contrasenia es incorrecta.";
@@ -219,6 +228,27 @@ namespace MeadowTW1.Web {
             }
         }
 
+        public static bool timeRefreshCheck(string data)
+        {
+            bool result;
+            short aux = 0;
+            if (data != null)
+            {
+                result = Int16.TryParse(data, out aux);
+                if (result == true) 
+                {
+                    if (int.Parse(data) > 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                return false;
+
+            }
+            return false;
+        }
+
         public static bool timeCheck(string[] data)
         {
             bool result;
@@ -250,48 +280,36 @@ namespace MeadowTW1.Web {
             return false;
         }
 
-        public static bool tempCheck(string[] data, bool tipo) {
+        public static bool tempCheck(string[] data) {
             bool result;
             double aux= 0;
             if (data != null) {
-                for (int i = 0; i < data.Length; i++) {
+                for (int i = 0; i < data.Length; i++) 
+                {
                     result = double.TryParse(data[i],out aux);
                     if (result ==true) 
                     {
-                        if (tipo)
+                        if (Double.Parse(data[i].ToString()) < 12 ||  Double.Parse(data[i].ToString()) >30)
                         {
-                            if (Double.Parse(data[i].ToString()) < 12 ||  Double.Parse(data[i].ToString()) >30)
-                            {
-                                return false;
-                            }
+                            return false;
                         }
-                        else
-                        {
-                            if (Double.Parse(data[i].ToString()) > 30 || Double.Parse(data[i].ToString()) <12)
-                            {
-                                return false;
-                            }
-                        }
+                        return true;
                     }
-                    else 
-                    {
-                        return false;
-                    }
-                    
+                    return false;
                 }
-                return true;
+                return false;
             }
-            return true;
+            return false;
         }
 
-        public static bool tempConsistantCheck(string[] data1, string[] data2) {
-            if (data1 != null && data1 != null)
+        public static bool tempConsistantCheck(string[] dataMax, string[] dataMin) {
+            if (dataMax != null && dataMin != null)
             {
-                if (tempCheck(data1, false) && tempCheck(data2, true))
+                if (tempCheck(dataMax) && tempCheck(dataMin))
                 {
-                    for (int i = 0; i < data1.Length; i++)
+                    for (int i = 0; i < dataMax.Length; i++)
                     {
-                        if (Double.Parse(data1[i].ToString()) >= Double.Parse(data2[i].ToString())) 
+                        if (Double.Parse(dataMax[i].ToString()) >= Double.Parse(dataMin[i].ToString())) 
                         {
                             return true;
                         }
@@ -384,13 +402,13 @@ namespace MeadowTW1.Web {
                             "<form name='params' method = 'get' class='tm-search-form tm-section-pad-2'>" +
                             "<div class='form-row tm-search-form-row'>" +
                             "<div class='form-group tm-form-element tm-form-element-100'>" +
-                            "<p>Temperatura Max <b>(&deg;C)</b> <input name='tempMax' type='text' class='form-control' value='" + mostarDatos(Data.temp_max) + "' " + disabled + "></input></p>" +
+                            "<p>Temperatura Max <b>(&deg;C)</b> <input name='tempMax' type='number' class='form-control' value='" + mostarDatos(Data.temp_max) + "' " + disabled + "></input></p>" +
                             "</div>" +
                             "<div class='form-group tm-form-element tm-form-element-50'>" +
-                            "<p>Temperatura Min <b>(&deg;C)</b> <input name='tempMin' type='text' class='form-control' value='" + mostarDatos(Data.temp_min) + "' " + disabled + "></input></p>" +
+                            "<p>Temperatura Min <b>(&deg;C)</b> <input name='tempMin' type='number' class='form-control' value='" + mostarDatos(Data.temp_min) + "' " + disabled + "></input></p>" +
                             "</div>" +
                             "<div class='form-group tm-form-element tm-form-element-50'>" +
-                            "<p>Duraci&oacute;n Ronda <b>(s)</b> <input name='time' type='text' class='form-control' value='" + mostarDatos(Data.round_time) + "' " + disabled + "></input></p>" +
+                            "<p>Duraci&oacute;n Ronda <b>(s)</b> <input name='time' type='number' class='form-control' value='" + mostarDatos(Data.round_time) + "' " + disabled + "></input></p>" +
                             "</div>" +
                             "</div>" +
                             "<div class='form-row tm-search-form-row'>" +
