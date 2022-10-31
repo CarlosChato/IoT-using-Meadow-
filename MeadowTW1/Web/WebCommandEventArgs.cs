@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MeadowTW1.Web {
+namespace NewCode.Web {
     /// <summary>
     /// Event arguments of an incoming web command.
     /// </summary>

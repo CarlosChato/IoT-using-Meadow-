@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Threading;
 
-namespace MeadowTW1.Web {
+namespace NewCode.Web {
     public class WebServer {
 
         private IPAddress _ip = null;
@@ -137,7 +137,7 @@ namespace MeadowTW1.Web {
 
                                         // Param 2 => to display_refresh
                                         string[] display_refresh_parts = parameters[2].Split('=');
-                                        
+
 
                                         // Param 3 => to refresh
                                         string[] refresh_parts = parameters[3].Split('=');
@@ -147,12 +147,12 @@ namespace MeadowTW1.Web {
                                         string[] round_time_parts = parameters[4].Split('=');
                                         Data.round_time = new string[] { round_time_parts[1] };
 
-                                        if(timeRefreshCheck(display_refresh_parts[1]) && timeRefreshCheck(refresh_parts[1])) 
+                                        if (timeRefreshCheck(display_refresh_parts[1]) && timeRefreshCheck(refresh_parts[1]))
                                         {
                                             Data.refresh = Int16.Parse(refresh_parts[1]);
                                             Data.display_refresh = Int16.Parse(display_refresh_parts[1]);
 
-                                            if (timeCheck(Data.round_time)) 
+                                            if (timeCheck(Data.round_time))
                                             {
                                                 if (!tempConsistantCheck(Data.temp_max, Data.temp_min))
                                                 {
@@ -171,12 +171,13 @@ namespace MeadowTW1.Web {
                                                 message = "El tiempo no es correcto";
                                             }
                                         }
-                                        else 
+                                        else
                                         {
                                             message = "Los tiempos de refresco son incorrectos";
                                         }
                                     }
-                                    else {
+                                    else
+                                    {
                                         message = "La contrasenia es incorrecta.";
                                     }
                                 }
@@ -207,6 +208,9 @@ namespace MeadowTW1.Web {
                     resp.ContentLength64 = data.LongLength;
 
                     // Write out to the response stream (asynchronously), then close it
+
+
+                    //opcion quitar esto para que sea infinito
                     await resp.OutputStream.WriteAsync(data, 0, data.Length);
                     resp.Close();
                 }
@@ -231,11 +235,11 @@ namespace MeadowTW1.Web {
         public static bool timeRefreshCheck(string data)
         {
             bool result;
-            short aux = 0;
+            float aux = 0;
             if (data != null)
             {
-                result = Int16.TryParse(data, out aux);
-                if (result == true) 
+                result = float.TryParse(data, out aux);
+                if (result == true)
                 {
                     if (int.Parse(data) > 0)
                     {
@@ -252,15 +256,15 @@ namespace MeadowTW1.Web {
         public static bool timeCheck(string[] data)
         {
             bool result;
-            int aux = 0;
+            short aux = 0;
             if (data != null)
             {
                 for (int i = 0; i < data.Length; i++)
                 {
-                    result = int.TryParse(data[i], out aux);
+                    result = Int16.TryParse(data[i], out aux);
                     if (result == true)
                     {
-                        if (int.Parse(data[i].ToString()) >0)
+                        if (int.Parse(data[i].ToString()) > 0)
                         {
                             return true;
                         }
@@ -282,14 +286,14 @@ namespace MeadowTW1.Web {
 
         public static bool tempCheck(string[] data) {
             bool result;
-            double aux= 0;
+            float aux = 0;
             if (data != null) {
-                for (int i = 0; i < data.Length; i++) 
+                for (int i = 0; i < data.Length; i++)
                 {
-                    result = double.TryParse(data[i],out aux);
-                    if (result ==true) 
+                    result = float.TryParse(data[i], out aux);
+                    if (result == true)
                     {
-                        if (Double.Parse(data[i].ToString()) < 12 ||  Double.Parse(data[i].ToString()) >30)
+                        if (float.Parse(data[i].ToString()) < 12 || float.Parse(data[i].ToString()) > 30)
                         {
                             return false;
                         }
@@ -302,14 +306,15 @@ namespace MeadowTW1.Web {
             return false;
         }
 
-        public static bool tempConsistantCheck(string[] dataMax, string[] dataMin) {
+        public static bool tempConsistantCheck(string[] dataMax, string[] dataMin)
+        {
             if (dataMax != null && dataMin != null)
             {
                 if (tempCheck(dataMax) && tempCheck(dataMin))
                 {
                     for (int i = 0; i < dataMax.Length; i++)
                     {
-                        if (Double.Parse(dataMax[i].ToString()) >= Double.Parse(dataMin[i].ToString())) 
+                        if (float.Parse(dataMax[i].ToString()) >= float.Parse(dataMin[i].ToString()))
                         {
                             return true;
                         }
@@ -332,6 +337,7 @@ namespace MeadowTW1.Web {
             }
 
             // Only show save and cooler mode in configuration mode and start round when we are ready
+            string inicio = "<button type=\"button\" onclick='inicio()'>Inicio</button>";
             string save = "<button type=\"button\" onclick='save()'>Guardar</button>";
             string temp = "<a href='#' class='btn btn-primary tm-btn-search' onclick='temp()'>Consultar Temperatura</a>";
             string graph = "";
@@ -380,6 +386,7 @@ namespace MeadowTW1.Web {
                             "location.href = 'setparams?tempMax=' + tempMax + '&tempMin=' + tempMin + '&displayRefresh=' + displayRefresh + '&refresh=' + refresh + '&time=' + time + '&pass=' + pass;" +
                             "}} " +
                             "function start(){{location.href = 'start'}}" +
+                            "function inicio(){{location.href = '#'}}" +
                             "</script>" +
 
                             "<div class='tm-main-content' id='top'>" +
@@ -399,16 +406,19 @@ namespace MeadowTW1.Web {
                             "<div class='container ie-h-align-center-fix'>" +
                             "<div class='row'>" +
                             "<div class='col-xs-12 ml-auto mr-auto ie-container-width-fix'>" +
+                            "<div class='form-group tm-form-element tm-form-element-50'>" +
+                            inicio +
+                            "</div>" + "<ln>"+
                             "<form name='params' method = 'get' class='tm-search-form tm-section-pad-2'>" +
                             "<div class='form-row tm-search-form-row'>" +
                             "<div class='form-group tm-form-element tm-form-element-100'>" +
-                            "<p>Temperatura Max <b>(&deg;C)</b> <input name='tempMax' type='number' class='form-control' value='" + mostarDatos(Data.temp_max) + "' " + disabled + "></input></p>" +
+                            "<p>Temperatura Max <b>(&deg;C)</b> <input name='tempMax' type='text' class='form-control' value='" + mostarDatos(Data.temp_max) + "' " + disabled + "></input></p>" +
                             "</div>" +
                             "<div class='form-group tm-form-element tm-form-element-50'>" +
-                            "<p>Temperatura Min <b>(&deg;C)</b> <input name='tempMin' type='number' class='form-control' value='" + mostarDatos(Data.temp_min) + "' " + disabled + "></input></p>" +
+                            "<p>Temperatura Min <b>(&deg;C)</b> <input name='tempMin' type='text' class='form-control' value='" + mostarDatos(Data.temp_min) + "' " + disabled + "></input></p>" +
                             "</div>" +
                             "<div class='form-group tm-form-element tm-form-element-50'>" +
-                            "<p>Duraci&oacute;n Ronda <b>(s)</b> <input name='time' type='number' class='form-control' value='" + mostarDatos(Data.round_time) + "' " + disabled + "></input></p>" +
+                            "<p>Duraci&oacute;n Ronda <b>(s)</b> <input name='time' type='text' class='form-control' value='" + mostarDatos(Data.round_time) + "' " + disabled + "></input></p>" +
                             "</div>" +
                             "</div>" +
                             "<div class='form-row tm-search-form-row'>" +

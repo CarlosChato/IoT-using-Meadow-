@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MeadowTW1.Web {
+namespace NewCode.Web {
     /// <summary>
     /// Holds the definition of a web command that can be interpreted by the WebServer class.
     /// </summary>
