@@ -145,7 +145,7 @@ namespace NewCode {
 
             total_time_in_range += timeController.TimeInRangeInMilliseconds;
             total_time_out_of_range += timeController.TimeOutOfRangeInMilliseconds;
-            Data.time_in_range_temp = (timeController.TimeInRangeInMilliseconds / 1000);
+            Data.time_in_range_temp = total_time_in_range;//((timeController.TimeInRangeInMilliseconds / 1000));
 
             Console.WriteLine("Tiempo dentro del rango " + ((timeController.TimeInRangeInMilliseconds / 1000)) + " s de " + total_time + " s");
             Console.WriteLine("Tiempo fuera del rango " + total_time_out_of_range / 1000 + " s de " + total_time + " s");

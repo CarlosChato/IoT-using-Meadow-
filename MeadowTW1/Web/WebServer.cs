@@ -121,19 +121,28 @@ namespace NewCode.Web {
                                     string pass_temp = pass_parts[1];
 
                                     if (string.Equals(pass, pass_temp)) {
-
-                                        // Param 0 => Temp max
+                                        //para varias rondas: Coger el formulario y permitir muchos valores en un solo input y
+                                        //separarlo por un separador.
                                         string[] temp_max_parts = parameters[0].Split('=');
+                                        string[] all_temperatures_max = temp_max_parts[1].Split(';');
+                                        Data.temp_max = new string[all_temperatures_max.Length];
+                                        all_temperatures_max.CopyTo(Data.temp_max, 0);
+                                        //comprobar cada valor de all_temperatures_max[] en 0,1,2,...
+                                        // Param 0 => Temp max
+                                        //string[] temp_max_parts = parameters[0].Split('=');
                                         //crea un array de strings "temp_max_parts" y coge el parametro 0 desde la url.
                                         //Coge el valor desde el = y lo utiliza como separador. Se guarda el valor en el segundo elemento
                                         //de la cadena ya que el primero es un espacio 
-                                        Data.temp_max = new string[] { temp_max_parts[1] };
+                                        //Data.temp_max = new string[] { temp_max_parts[1] };
                                         //crea el array de temp maxima con el valor de temp_max_parts en la posicion 1, es decir, 
                                         //el valor recibido en el formulario en el parametro 0.
 
                                         // Param 1 => Temp min
                                         string[] temp_min_parts = parameters[1].Split('=');
-                                        Data.temp_min = new string[] { temp_min_parts[1] };
+                                        string[] all_temperatures_min = temp_min_parts[1].Split(';');
+                                        Data.temp_min = new string[all_temperatures_min.Length];
+                                        all_temperatures_min.CopyTo(Data.temp_min, 0);
+                                        //Data.temp_min = new string[] { temp_min_parts[1] };
 
                                         // Param 2 => to display_refresh
                                         string[] display_refresh_parts = parameters[2].Split('=');
@@ -145,7 +154,9 @@ namespace NewCode.Web {
 
                                         // Param 4 => to round_time
                                         string[] round_time_parts = parameters[4].Split('=');
-                                        Data.round_time = new string[] { round_time_parts[1] };
+                                        string[] all_rounds = round_time_parts[1].Split(';');
+                                        Data.round_time = new string[all_rounds.Length];
+                                        all_rounds.CopyTo(Data.round_time, 0);
 
                                         if (timeRefreshCheck(display_refresh_parts[1]) && timeRefreshCheck(refresh_parts[1]))
                                         {
@@ -162,8 +173,14 @@ namespace NewCode.Web {
 
                                                 else
                                                 {
+                                                    if (Data.round_time.Length==Data.temp_max.Length) { 
                                                     message = "Los parametros se han cambiado satisfactoriamente. Todo preparado.";
                                                     ready = true;
+                                                    }
+                                                    else
+                                                    {
+                                                        message = "El tiempo y las temperaturas tienen que tener el mismo numero de rondas";
+                                                    }
                                                 }
                                             }
                                             else
@@ -264,14 +281,11 @@ namespace NewCode.Web {
                     result = Int16.TryParse(data[i], out aux);
                     if (result == true)
                     {
-                        if (int.Parse(data[i].ToString()) > 0)
+                        if (int.Parse(data[i].ToString()) < 0)
                         {
                             return true;
                         }
-                        else
-                        {
-                            return false;
-                        }
+
                     }
                     else
                     {
@@ -279,7 +293,7 @@ namespace NewCode.Web {
                     }
 
                 }
-                return false;
+                return true;
             }
             return false;
         }
@@ -297,11 +311,14 @@ namespace NewCode.Web {
                         {
                             return false;
                         }
-                        return true;
+                        //return true;//eliminar
                     }
-                    return false;
+                    else {
+                        return false;
+                    }
+                    
                 }
-                return false;
+                return true;
             }
             return false;
         }
@@ -312,17 +329,18 @@ namespace NewCode.Web {
             {
                 if (tempCheck(dataMax) && tempCheck(dataMin))
                 {
-                    for (int i = 0; i < dataMax.Length; i++)
-                    {
-                        if (float.Parse(dataMax[i].ToString()) >= float.Parse(dataMin[i].ToString()))
+                    if (dataMax.Length == dataMin.Length) { 
+                        for (int i = 0; i < dataMax.Length; i++)
                         {
-                            return true;
+                            if (float.Parse(dataMax[i].ToString()) < float.Parse(dataMin[i].ToString()))
+                            {
+                                return false;
+                            }
+
                         }
-                        else
-                        {
-                            return false;
-                        }
+                        return true;
                     }
+                    return false;
                 }
                 return false;
             }
@@ -337,7 +355,7 @@ namespace NewCode.Web {
             }
 
             // Only show save and cooler mode in configuration mode and start round when we are ready
-            string inicio = "<button type=\"button\" onclick='inicio()'>Inicio</button>";
+            //string inicio = "<button type=\"button\" onclick='inicio()'>Inicio</button>";
             string save = "<button type=\"button\" onclick='save()'>Guardar</button>";
             string temp = "<a href='#' class='btn btn-primary tm-btn-search' onclick='temp()'>Consultar Temperatura</a>";
             string graph = "";
@@ -407,7 +425,7 @@ namespace NewCode.Web {
                             "<div class='row'>" +
                             "<div class='col-xs-12 ml-auto mr-auto ie-container-width-fix'>" +
                             "<div class='form-group tm-form-element tm-form-element-50'>" +
-                            inicio +
+                            //inicio +
                             "</div>" + "<ln>"+
                             "<form name='params' method = 'get' class='tm-search-form tm-section-pad-2'>" +
                             "<div class='form-row tm-search-form-row'>" +
