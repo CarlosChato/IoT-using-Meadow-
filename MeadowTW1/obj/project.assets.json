@@ -14,10 +14,14 @@
           "NetEscapades.Configuration.Yaml": "2.2.0"
         },
         "compile": {
-          "lib/netstandard2.1/Meadow.dll": {}
+          "lib/netstandard2.1/Meadow.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Meadow.dll": {}
+          "lib/netstandard2.1/Meadow.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.Contracts/0.32.1": {
@@ -27,10 +31,14 @@
           "Meadow.Units": "0.32.1"
         },
         "compile": {
-          "lib/netstandard2.1/Meadow.Contracts.dll": {}
+          "lib/netstandard2.1/Meadow.Contracts.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Meadow.Contracts.dll": {}
+          "lib/netstandard2.1/Meadow.Contracts.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.F7/0.32.1": {
@@ -39,10 +47,14 @@
           "Meadow": "0.32.1"
         },
         "compile": {
-          "lib/netstandard2.1/Meadow.F7.dll": {}
+          "lib/netstandard2.1/Meadow.F7.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Meadow.F7.dll": {}
+          "lib/netstandard2.1/Meadow.F7.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.Foundation/0.34.1": {
@@ -51,10 +63,14 @@
           "Meadow": "0.32.1"
         },
         "compile": {
-          "lib/netstandard2.1/Meadow.Foundation.dll": {}
+          "lib/netstandard2.1/Meadow.Foundation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Meadow.Foundation.dll": {}
+          "lib/netstandard2.1/Meadow.Foundation.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.Foundation.Displays.MicroGraphics/0.9.57": {
@@ -63,10 +79,14 @@
           "Meadow.Foundation": "0.34.1"
         },
         "compile": {
-          "lib/netstandard2.1/MicroGraphics.dll": {}
+          "lib/netstandard2.1/MicroGraphics.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/MicroGraphics.dll": {}
+          "lib/netstandard2.1/MicroGraphics.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.Foundation.Displays.TftSpi/0.7.61": {
@@ -76,10 +96,14 @@
           "Meadow.Foundation.Displays.MicroGraphics": "0.9.57"
         },
         "compile": {
-          "lib/netstandard2.1/TftSpi.dll": {}
+          "lib/netstandard2.1/TftSpi.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/TftSpi.dll": {}
+          "lib/netstandard2.1/TftSpi.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.Foundation.Sensors.Location.Gnss.NmeaProcessor/0.1.50": {
@@ -88,19 +112,27 @@
           "Meadow.Foundation": "0.34.1"
         },
         "compile": {
-          "lib/netstandard2.1/NmeaProcessor.dll": {}
+          "lib/netstandard2.1/NmeaProcessor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/NmeaProcessor.dll": {}
+          "lib/netstandard2.1/NmeaProcessor.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.Logging/0.32.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/Meadow.Logging.dll": {}
+          "lib/netstandard2.1/Meadow.Logging.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Meadow.Logging.dll": {}
+          "lib/netstandard2.1/Meadow.Logging.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Meadow.MQTT/0.32.1": {
@@ -115,19 +147,27 @@
       "Meadow.Units/0.32.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/Meadow.Units.dll": {}
+          "lib/netstandard2.1/Meadow.Units.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Meadow.Units.dll": {}
+          "lib/netstandard2.1/Meadow.Units.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/6.0.1": {
@@ -137,10 +177,14 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
@@ -149,10 +193,14 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.FileExtensions/6.0.0": {
@@ -165,10 +213,14 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Json/6.0.0": {
@@ -181,10 +233,14 @@
           "System.Text.Json": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll": {}
+          "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll": {}
+          "lib/netstandard2.1/Microsoft.Extensions.Configuration.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/6.0.0": {
@@ -193,10 +249,14 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.FileProviders.Physical/6.0.0": {
@@ -207,19 +267,27 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.FileSystemGlobbing/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Primitives/6.0.0": {
@@ -229,10 +297,14 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         }
       },
       "NetEscapades.Configuration.Yaml/2.2.0": {
@@ -243,19 +315,27 @@
           "YamlDotNet": "11.2.1"
         },
         "compile": {
-          "lib/netstandard2.0/NetEscapades.Configuration.Yaml.dll": {}
+          "lib/netstandard2.0/NetEscapades.Configuration.Yaml.dll": {
+            "related": ".pdb"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/NetEscapades.Configuration.Yaml.dll": {}
+          "lib/netstandard2.0/NetEscapades.Configuration.Yaml.dll": {
+            "related": ".pdb"
+          }
         }
       },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Buffers.dll": {}
+          "ref/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Buffers.dll": {}
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.4": {
@@ -266,28 +346,40 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Numerics.Vectors.dll": {}
+          "ref/netstandard2.0/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Numerics.Vectors.dll": {}
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Text.Encodings.Web/6.0.0": {
@@ -298,10 +390,14 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Text.Json/6.0.0": {
@@ -316,10 +412,14 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/netstandard2.0/System.Text.Json.dll": {}
+          "lib/netstandard2.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Text.Json.dll": {}
+          "lib/netstandard2.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "build/_._": {}
@@ -331,19 +431,27 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "YamlDotNet/11.2.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/YamlDotNet.dll": {}
+          "lib/netstandard2.1/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/YamlDotNet.dll": {}
+          "lib/netstandard2.1/YamlDotNet.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -978,25 +1086,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\javie\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\javie\\Source\\Repos\\MDV\\MeadowTW1\\NewCode.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Source\\Repos\\MDV\\MeadowTW1\\NewCode.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\javie\\Source\\Repos\\MDV\\MeadowTW1\\NewCode.csproj",
-      "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\javie\\Source\\Repos\\MDV\\MeadowTW1\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\MDV\\MeadowTW1\\NewCode.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\MDV\\MeadowTW1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -1044,7 +1147,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -1053,7 +1157,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
